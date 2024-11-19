@@ -1,6 +1,7 @@
 package com.dinellipaulo.userregister.repositories;
 
+import com.dinellipaulo.userregister.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public class UserRepository extends JpaRepository<> {
+public interface UserRepository extends JpaRepository<User, Long> {
 }
