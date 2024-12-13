@@ -25,4 +25,19 @@ public class UserService {
     public User createUser(User user){
         return userRepository.save(user);
     }
+
+    public User updateUser(Long id, User userDetails){
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()){
+            User u = user.get();
+            u.setName(userDetails.getName());
+            u.setEmail(userDetails.getEmail());
+            return userRepository.save(u);
+        }
+        return null;
+    }
+
+    public void deleteUser(Long id){
+        userRepository.deleteById(id);
+    }
 }
