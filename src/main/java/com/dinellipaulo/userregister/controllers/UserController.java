@@ -33,6 +33,7 @@ public class UserController {
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user){
         return userService.updateUser(id, user);
+        //TODO: Implement exception handler in case user is not found
     }
 
     @DeleteMapping("/{id}")
